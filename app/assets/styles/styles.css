@@ -1,13 +1,8 @@
-$mainBlue: #2c3e50;
+@import "normalize.css";
+@import "base/_global";
+@import "base/_variables";
+@import "modules/_large-hero";
+@import "modules/_btn";
 
-body {
-  color: $mainBlue;
-  columns: 300px 2;
-}
 
-.container {
-  a {
-    display: block;
-    padding: 10px;
-  }
-}
+
