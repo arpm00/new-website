@@ -1097,9 +1097,12 @@ a {
     padding-right: 0;
   }
 
-.primary-nav li:last-child mixin atMedium {
-      padding-right: 20px;
-    }
+@media (min-width: 800px) {
+
+.primary-nav li:last-child {
+      padding-right: 20px
+  }
+  }
 
 .primary-nav a {
     color: #fff;
@@ -1118,6 +1121,17 @@ a {
       font-size: 1rem;
       background-color: transparent
   }
+  }
+
+.reveal-item {
+  opacity: 0;
+  transition: all 1.5s ease-out;
+  transform: scale(1.5);
+}
+
+.reveal-item--is-visible {
+    opacity: 1;
+    transform: scale(1);
   }
 
 

@@ -14,7 +14,7 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: [
-            ['latest', {modules: false}],
+            ['es2015', {modules: false}],
           ],
         },
       },
