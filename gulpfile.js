@@ -28,7 +28,7 @@ function style() {
 }
 
 function scripts(callback) {
-  gulp.src('./app/assets/scripts/app.js')
+  return gulp.src('./app/assets/scripts/app.js')
     .pipe(webpackStream(webpackConfig), webpack).on('error', function(err, stats){
       if (err) {
         console.log(err.toString());
