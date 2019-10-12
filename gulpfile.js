@@ -115,6 +115,6 @@ function previewDist() {
 
 exports.style = style;
 exports.scripts = scripts;
-exports.build = gulp.series(deleteDistFolder, build, minified, copyGeneralFiles);
+exports.build = gulp.series(deleteDistFolder, minified, build, copyGeneralFiles);
 exports.watch = watch;
 exports.dist = previewDist;
