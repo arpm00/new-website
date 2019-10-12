@@ -47,7 +47,7 @@ function scripts(callback) {
 }
 
 function deleteDistFolder() {
-  return del("./dist");
+  return del("./docs");
 }
 
 function copyGeneralFiles() {
@@ -61,7 +61,7 @@ function copyGeneralFiles() {
     '!./app/temp/**'
   ]
   return gulp.src(pathToCopy)
-  .pipe(gulp.dest("./dist"));
+  .pipe(gulp.dest("./docs"));
 }
 
 function build() {
@@ -71,7 +71,7 @@ function build() {
     interlays: true,
     multipass: true
   }))
-  .pipe(gulp.dest("./dist/assets/images"));
+  .pipe(gulp.dest("./docs/assets/images"));
 }
 
 function minified() {
@@ -83,7 +83,7 @@ function minified() {
     },
     js: [function(){return rev()}, function(){return uglify()}]
   }))
-  .pipe(gulp.dest("./dist"));
+  .pipe(gulp.dest("./docs"));
 }
 
 function watch() {
@@ -105,12 +105,12 @@ function previewDist() {
   browserSync.init({
     notify: false,
     server: {
-      baseDir: './dist'
+      baseDir: './docs'
     }
   })
-  gulp.watch('./dist/assets/styles/**/*.css', style);
-  gulp.watch('./dist/*.html').on('change', browserSync.reload);
-  gulp.watch('./dist/assets/scripts/**/*.js', scripts);
+  gulp.watch('./docs/assets/styles/**/*.css', style);
+  gulp.watch('./docs/*.html').on('change', browserSync.reload);
+  gulp.watch('./docs/assets/scripts/**/*.js', scripts);
 }
 
 exports.style = style;
